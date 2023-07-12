@@ -26,10 +26,8 @@ app.use('/api/users', usersRoutes);
 const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5000',
-  'http://we-dont-waste-food.herokuapp.com',
-  'https://we-dont-waste-food.herokuapp.com',
   'https://api.cloudinary.com/v1_1/dsxujytlz/image/upload',
-  'https://foodwastemanagement.onrender.com/'
+  'https://wastemanagement.onrender.com/'
 ]
 // app.use(
 //   cors({
@@ -46,13 +44,13 @@ const allowedOrigins = [
 //   })
 // )
 
-// if(process.env.NODE_ENV == "production"){
-//   app.use(express.static("frontend/build"));
-//   const path = require("path");
-//   app.get("*", (req, res) => {
-//       res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-//   })
-// }
+if(process.env.NODE_ENV == "production"){
+  app.use(express.static("frontend/build"));
+  const path = require("path");
+  app.get("*", (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+}
 
 mongoose
   .connect(
