@@ -28,7 +28,8 @@ const allowedOrigins = [
   'http://localhost:5000',
   'http://we-dont-waste-food.herokuapp.com',
   'https://we-dont-waste-food.herokuapp.com',
-  'https://api.cloudinary.com/v1_1/wdwfsdp/image/upload'
+  'https://api.cloudinary.com/v1_1/wdwfsdp/image/upload',
+  'https://foodwastemanagement.onrender.com'
 ]
 // app.use(
 //   cors({
