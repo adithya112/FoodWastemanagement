@@ -2,8 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const path = require('path');
-
 
 const HttpError = require('./models/http-error');
 const usersRoutes = require('./routes/user-routes');
@@ -47,7 +45,7 @@ const allowedOrigins = [
 // )
 
 if(process.env.NODE_ENV == "production"){
-  app.use(express.static(path.join(__dirname, 'frontend', 'build')));
+  app.use(express.static("frontend/build"));
   const path = require("path");
   app.get("*", (req, res) => {
       res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
